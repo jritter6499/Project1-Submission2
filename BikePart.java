@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Comparator;
 
 public class BikePart implements Comparable<BikePart> {
@@ -11,6 +9,7 @@ public class BikePart implements Comparable<BikePart> {
     private boolean onSale;
     private int quantity;
 
+    public BikePart() {}
 
     /**
      * @param partName This is the name of the Bikepart
@@ -21,8 +20,6 @@ public class BikePart implements Comparable<BikePart> {
      * The most of the methods are setters and getters
      *
      */
-    public BikePart() {}
-
     public BikePart(String partName, int partNumber, double price, double salesPrice, boolean onSale, int quantity) {
         this.partName = partName;
         this.partNumber = partNumber;

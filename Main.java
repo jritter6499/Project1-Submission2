@@ -8,9 +8,6 @@
  * @version 1.0
  * @since 2020-1-29
  */
-
-
-package com.company;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
