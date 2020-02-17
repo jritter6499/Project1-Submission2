@@ -31,7 +31,7 @@ public class Main {
         while (!(userIn.equals("Quit"))) {
             time+=1.0;
 
-                //System.out.println("Enter: enter part");
+                System.out.println("Enter: enter part");
                 System.out.println("Read: Read a file into inventory.");
                 System.out.println("Sell: Sell a part");
                 System.out.println("Display: Display a part");
