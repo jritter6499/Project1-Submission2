@@ -10,6 +10,7 @@
  */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,7 @@ public class Main {
      * Prints items <20$
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         double time = 0.0;
         Scanner input = new Scanner(System.in);
 

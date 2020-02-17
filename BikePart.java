@@ -3,7 +3,7 @@ import java.util.Comparator;
 public class BikePart implements Comparable<BikePart> {
 
     private String partName;
-    private int partNumber;
+    private String partNumber;
     private double price;
     private double salesPrice;
     private boolean onSale;
@@ -14,16 +14,16 @@ public class BikePart implements Comparable<BikePart> {
     /**
      * @param partName This is the name of the Bikepart
      * @param partNumber This is the number of the Bikepart
-     * @param price This is the price of the Bikepart
+     * @param listPrice This is the price of the Bikepart
      * @param salesPrice This is the price of the item on sale
      * @param onSale this is the value if the item is on sale
      * The most of the methods are setters and getters
      *
      */
-    public BikePart(String partName, int partNumber, double price, double salesPrice, boolean onSale, int quantity) {
+    public BikePart(String partName, String partNumber, double listPrice, double salesPrice, boolean onSale) {
         this.partName = partName;
         this.partNumber = partNumber;
-        this.price = price;
+        this.price = listPrice;
         this.salesPrice = salesPrice;
         this.onSale = onSale;
         this.quantity = quantity;
@@ -49,7 +49,7 @@ public class BikePart implements Comparable<BikePart> {
      * Sets the Bicycle Part number
      * @param x the local part's number
      */
-    public void setPartNumber(int x) {
+    public void setPartNumber(String x) {
         this.partNumber = x;
     }
 
@@ -57,7 +57,7 @@ public class BikePart implements Comparable<BikePart> {
      * Retrieves the Bicycle Part's number
      * @return the number
      */
-    public int getPartNumber() {
+    public String getPartNumber() {
         return this.partNumber;
     }
 
