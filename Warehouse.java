@@ -37,6 +37,18 @@ public class Warehouse {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
+        FileWriter writer = new FileWriter("warehouseDB.txt");
+        for (BikePart bp: inventory) {
+            writer.write(
+                    bp.getPartName() + ", "
+                            + bp.getPartNumber() + ", "
+                            + bp.getPrice() + ", "
+                            + bp.getSalesPrice() + ", "
+                            + bp.getOnSale() + ", "
+                            + System.lineSeparator());
+        }
+        writer.close();
+        System.out.println("warehouseDB successfully processed");
     }
 
     //public String sell(String partNum, double time) {
