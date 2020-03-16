@@ -2,39 +2,39 @@ import java.util.Comparator;
 
 public class BikePart implements Comparable<BikePart> {
 
+    private BikePart part;
     private String partName;
     private String partNumber;
-    private double price;
+    public double price;
     private double salesPrice;
     private boolean onSale;
     private int quantity;
 
-    public BikePart() {}
-
     /**
      * @param partName This is the name of the Bikepart
      * @param partNumber This is the number of the Bikepart
-     * @param listPrice This is the price of the Bikepart
+     * @param price This is the price of the Bikepart
      * @param salesPrice This is the price of the item on sale
      * @param onSale this is the value if the item is on sale
      * The most of the methods are setters and getters
      *
      */
-    public BikePart(String partName, String partNumber, double listPrice, double salesPrice, boolean onSale) {
+    public BikePart(String partName, String partNumber, double price, double salesPrice, boolean onSale, int quantity) {
         this.partName = partName;
         this.partNumber = partNumber;
-        this.price = listPrice;
+        this.price = price;
         this.salesPrice = salesPrice;
         this.onSale = onSale;
         this.quantity = quantity;
     }
 
+
     /**
      * Sets the Bicycle Part name
-     * @param x the local part's name
+     * @param name the local part's name
      */
-    public void setPartName(String x) {
-        this.partName = x;
+    public void setPartName(String name) {
+        this.partName = name;
     }
 
     /**
@@ -47,10 +47,10 @@ public class BikePart implements Comparable<BikePart> {
 
     /**
      * Sets the Bicycle Part number
-     * @param x the local part's number
+     * @param number the local part's number
      */
-    public void setPartNumber(String x) {
-        this.partNumber = x;
+    public void setPartNumber(String number) {
+        this.partNumber = number;
     }
 
     /**
@@ -63,10 +63,10 @@ public class BikePart implements Comparable<BikePart> {
 
     /**
      * Sets the Bicycle Part price
-     * @param x the local part's price
+     * @param price the local part's price
      */
-    public void setPrice(double x) {
-        this.price = x;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     /**
@@ -79,26 +79,24 @@ public class BikePart implements Comparable<BikePart> {
 
     /**
      * Sets the Bicycle Part's price on sale
-     * @param x the local part's sale price
+     * @param salesPrice the local part's sale price
      */
-    public void setSalesPrice(double x) {
-        this.salesPrice = x;
+    public void setSalesPrice(double salesPrice) {
+        this.salesPrice = salesPrice;
     }
 
     /**
      * Retrieves the Bicycle Part's on sale price
      * @return the on sale price
      */
-    public double getSalesPrice() {
-        return this.salesPrice;
-    }
+    public double getSalesPrice() { return this.salesPrice; }
 
     /**
      * Sets the Bicycle Part's price on sale
-     * @param x the local part's sale price
+     * @param onSale the local part's sale price
      */
-    public void setOnSale(boolean x) {
-        this.onSale = x;
+    public void setOnSale(boolean onSale) {
+        this.onSale = onSale;
     }
 
     /**
@@ -109,14 +107,23 @@ public class BikePart implements Comparable<BikePart> {
         return this.onSale;
     }
 
-    public void setQuantity(int x) {this.quantity = x; }
+    /**
+     * Sets the Bicycle Part's quantity
+     * @param quantity how many of the part there are
+     */
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
+    /**
+     * Retrieves how many of the part there are
+     * @return part count
+     */
     public int getQuantity() { return this.quantity; }
 
     /**
      * converts output to be well formatted
      * @return formatted output
      */
+
     public String toString() {
         return("name: " + partName + " id: " + partNumber + " price: " + price);
     }

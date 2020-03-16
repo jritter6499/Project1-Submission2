@@ -24,38 +24,54 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         double time = 0.0;
+        Warehouse liveDatabase = new Warehouse();
+        try {
+            liveDatabase.updateLiveDB("warehouseDB.txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("warehouseDB.txt does not exist");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        liveDatabase.getBP();
+
         Scanner input = new Scanner(System.in);
 
         Warehouse inventory = null;
 
         String userIn = "";
         while (!(userIn.equals("Quit"))) {
-            time+=1.0;
+            time += 1.0;
 
-                System.out.println("Enter: enter part");
-                System.out.println("Read: Read a file into inventory.");
-                System.out.println("Sell: Sell a part");
-                System.out.println("Display: Display a part");
-                System.out.println("SortName: Sort parts by part name");
-                System.out.println("SortNumber: Sort parts by part number");
-                System.out.println("Quit: exists");
-                System.out.println("Enter your choice: ");
-                userIn = input.nextLine();
+            System.out.println("Enter: enter part");
+            System.out.println("Read: Read a file into inventory.");
+            System.out.println("Sell: Sell a part");
+            System.out.println("Display: Display a part");
+            System.out.println("SortName: Sort parts by part name");
+            System.out.println("SortNumber: Sort parts by part number");
+            System.out.println("Quit: exits");
+            System.out.println("Enter your choice: ");
+            userIn = input.nextLine();
 
-                // Read in the inventory file
-                if (userIn.equals("Read")) {
-                    System.out.println("Please Type the fileName: ");
-                    inventory = new Warehouse(input.nextLine());
-                } else if(userIn.equals("Enter")) {
-                    System.out.println("Inventory full");
-                } else if(userIn.equals("Sell")) {
+            if (userIn.equalsIgnoreCase("Enter")) {
 
-                } else if (userIn.equals("SortName")) {
-                    inventory.SortName(inventory.getParts());
-                }
+            } else if (userIn.equalsIgnoreCase("Read")) {
+                System.out.println("Please Type the fileName: ");
+                //inventory = new Warehouse(input.nextLine());
+
+            } else if (userIn.equals("Sell")) {
+
+            } else if (userIn.equalsIgnoreCase("Display")) {
+
+            } else if (userIn.equalsIgnoreCase("SortName")) {
+
+            } else if (userIn.equalsIgnoreCase("SortNumber")) {
+
+            } else if (userIn.equals("Quit")) {
+                liveDatabase.saveToWarehouseDB();
+                System.exit(0);
             }
-
-
         }
-
     }
+}
